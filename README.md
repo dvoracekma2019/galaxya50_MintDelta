@@ -75,8 +75,15 @@ sudo dnf install elfutils-libelf-devel bzip2 bc p7zip jq git python3
 
 Once you have the prerequisites installed, simply run this on the Terminal.
 
-`./build.sh -d|--device <device> -v|--variant <variant> -a|--android <Android version> [main options]`
-
+`./build.sh -d|--device <device> -v|--variant <variant> -a|--android <Android version> [main options] -m| --magisk <version>`
+**Magisk oprtions ( -m ):**
+```
+- dcanary # for MagiskDelta canary
+- dlocal # for MagiskDelta stable
+- mcanary # for normal Magisk canary
+- mlocal # for normal Magisk stable
+- leave blank and MagiskDelta will be built automatically
+```
 **Device options:**
 
 ```
