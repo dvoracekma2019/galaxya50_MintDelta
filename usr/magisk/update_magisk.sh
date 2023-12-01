@@ -6,14 +6,22 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 ver="$(cat "$DIR/magisk_version" 2>/dev/null || echo -n 'none')"
 
-if [ "x$1" = "xcanary" ]
+if [ "x$1" = "xdcanary" ]
 then
 	nver="canary"
 	magisk_link="https://github.com/dvoracekma2019/galaxya50mintkernelhosting/raw/main/app-debug.apk"
-elif [ "x$1" = "xlocal" ]
+elif [ "x$1" = "xdlocal" ]
 then
 	nver="local"
 	magisk_link="https://github.com/HuskyDG/magisk-files/raw/main/app-debug.apk"
+elif [ "x$1" = "xmcanary" ]
+then
+        nver="canary"
+	magisk_link="https://github.com/topjohnwu/magisk-files/raw/${nver}/app-debug.apk"
+elif [ "x$1" = "xmlocal" ]
+then
+        nver="local"
+	magisk_link="https://gitlab.com/TenSeventy7/magisk-files/raw/main/app-debug.apk"
 else
 	if [ "x$1" = "x" ]; then
 		nver="$(curl -s https://github.com/dvoracekma2019/galaxya50mintkernelhosting/raw/main/stable.json | jq '.magisk.version' | cut -d '"' -f 2)"
