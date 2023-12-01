@@ -111,10 +111,14 @@ update_magisk() {
 	script_echo " "
 	script_echo "I: Updating Magisk..."
 
-	if [[ "x${BUILD_KERNEL_MAGISK_BRANCH}" == "xcanary" ]]; then
-		MAGISK_BRANCH="canary"
-	elif [[ "x${BUILD_KERNEL_MAGISK_BRANCH}" == "xlocal" ]]; then
-		MAGISK_BRANCH="local"
+	if [[ "x${BUILD_KERNEL_MAGISK_BRANCH}" == "xdcanary" ]]; then
+		MAGISK_BRANCH="dcanary"
+	elif [[ "x${BUILD_KERNEL_MAGISK_BRANCH}" == "xdlocal" ]]; then
+		MAGISK_BRANCH="dlocal"
+        elif [[ "x${BUILD_KERNEL_MAGISK_BRANCH}" == "xmcanary" ]]; then
+                MAGISK_BRANCH="mcanary"
+        elif [[ "x${BUILD_KERNEL_MAGISK_BRANCH}" == "xmlocal" ]]; then
+                MAGISK_BRANCH="mlocal"
 	else
 		MAGISK_BRANCH=""
 	fi
@@ -392,17 +396,18 @@ build_package() {
 
 script_echo ' '
 script_echo '==============================================='
-script_echo "                       _       _               "
-script_echo "                 /\/\ (_)_ __ | |_             "
-script_echo "                /    \| | '_ \| __|            "
-script_echo "               / /\/\ \ | | | | |_             "
-script_echo "               \/    \/_|_| |_|\__|            "
+script_echo "                            _____      _       "
+script_echo "          _       _     ____| ___| _ _| |_     "               
+script_echo "    /\/\ (_)_ __ | |_  |  _ \ |__ | |_   _|__  "                 
+script_echo "   /    \| | '_ \| __| | | || ___|| | | |/ _ | "         
+script_echo "  / /\/\ \ | | | | |_  | |_|| |__ | | | | |_|| "            
+script_echo "  \/    \/_|_| |_|\__| |____/____||_| |_|\___| "                                                          
 script_echo "                                               "
 script_echo '==============================================='
 script_echo '           Minty - Kernel Build Script         '
 script_echo '            Part of The Fresh Project          '
 script_echo '       by TenSeventy7 - Licensed in GPLv3      '
-script_echo '                                               '
+script_echo '       KitsuneMask implmented by mistrmochov   '
 script_echo '       Originally built for Project ShadowX    '
 script_echo '==============================================='
 script_echo ' '
