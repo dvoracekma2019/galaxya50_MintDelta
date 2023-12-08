@@ -90,5 +90,9 @@ Once you have the prerequisites installed, simply run this on the Terminal.
 ```
 - a50 # For Samsung Galaxy A50
 ```
+**Build example:**
 
+```
+- sudo ./build.sh -d a50 -v oneui -a 13 -m dcanary -p
+```
 More options are available on the script by executing `./build.sh --help|-h`. The script will download all it needs (including the toolchain) and builds a new kernel build for you.
